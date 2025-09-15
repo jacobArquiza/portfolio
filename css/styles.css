@@ -40,12 +40,47 @@
         animation: slide-in-from-top 0.5s ease-out forwards;
     }
 
+@keyframes slide-out {
+        0% {
+            opacity: 1;
+            transform: translateX(0);
+            display: flex;
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(100vw);
+            display: none;
+        }
+    }
+    .slide-out {
+        animation: slide-out .25s ease-out forwards;
+    }
+
+@keyframes pop {
+        0% {
+            opacity: 0;
+            transform: translateY(0), scale(1);
+        }
+        50%{
+            opacity: 1;
+            transform: translateY(-200%) scale(1.05);
+            
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0), scale(1);
+            
+        }
+    }
+    .pop {
+        animation: pop 0.25s ease-in-out;
+    }
+
 .hidden, 
 .hidden.slide-in-from-left-target h2, 
 .hidden.slide-in-from-left-target div{
     display: none;
 }
-
 
 .is-fixed {
   position: fixed;
