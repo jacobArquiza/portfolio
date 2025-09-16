@@ -25,7 +25,6 @@
     .slide-in-from-right {
         animation: slide-in-from-right 1s ease-out forwards;
     }
-
 @keyframes slide-in-from-top {
         0% {
             transform: translateY(-100%);
@@ -49,7 +48,7 @@
         100% {
             opacity: 0;
             transform: translateX(100vw);
-            display: none;
+            display: hidden;
         }
     }
     .slide-out {
@@ -76,10 +75,41 @@
         animation: pop 0.25s ease-in-out;
     }
 
+.typewriter {
+            overflow: hidden; /* Hides text that overflows its width */
+            border-right: .15em solid rgb(0, 0, 0); /* The blinking cursor */
+            white-space: nowrap; /* Prevents text from wrapping */
+            font-size: 2em;
+            width: 0; /* Starts with zero width */
+            animation: 
+                typing 3.5s steps(30, end) forwards, /* The typing animation */
+                blink-caret .75s step-end infinite; /* The blinking cursor animation */
+        }
+
+        /* The typing animation reveals the text by increasing the width */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 51}
+        }
+
+        /* The blinking cursor animation */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black; }
+        }
+
 .hidden, 
 .hidden.slide-in-from-left-target h2, 
 .hidden.slide-in-from-left-target div{
     display: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.card-title{
+    scroll-margin-top: 5vh;
 }
 
 .is-fixed {
