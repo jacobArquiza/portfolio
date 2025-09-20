@@ -75,6 +75,45 @@
         animation: pop 0.25s ease-in-out;
     }
 
+@keyframes slide-out-and-fade {
+        0% {
+            opacity: 1;
+            transform: translateX(0);
+            display: flex;
+        }
+        100%{
+            opacity: 0;
+            transform: translateX(30vw);
+            display: none;
+        }
+    }
+    .slide-out-and-fade {
+        animation: slide-out-and-fade 1s ease-in-out forwards;
+    }
+@keyframes slide-in-and-fade {
+        0% {
+            opacity: 0;
+            transform: translateX(-30vw);
+            display: flex;
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+            display: flex;
+        }
+    }
+    .slide-in-and-fade {
+        animation: slide-in-and-fade 1s ease-in-out forwards;
+    }
+
+.project-image-preview{
+    transition: transform 0.5s ease-in-out;
+}
+
+.project-image-preview:hover{
+    transform: scale(1.05);
+}
+
 .typewriter {
             overflow: hidden; /* Hides text that overflows its width */
             border-right: .15em solid rgb(0, 0, 0); /* The blinking cursor */
@@ -118,3 +157,4 @@ html{
   width: 100%;
   z-index: 10;
 }
+
