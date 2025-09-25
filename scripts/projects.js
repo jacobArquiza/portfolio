@@ -238,16 +238,17 @@ function constructProjectImageDisplay(project){
             projectImageDisplayHTML += `<div class="flex w-full justify-center gap-2 py-2">`;
             
             for(let i = 0; i < project.imageURLS.length; i++){
-                projectImageDisplayHTML += `<a href="#item${globalCarouselButtonIndex}" class="btn btn-xs">${i+1}</a>`;
+                projectImageDisplayHTML += `
+                <a href="#item${globalCarouselButtonIndex}" 
+                   class="btn btn-xs carousel-item-link" 
+                >${i+1}</a>
+                `;
                 globalCarouselButtonIndex ++;
             }
             
             projectImageDisplayHTML += `</div>`;
         }
     }
-    console.log(project.projectName)
-    console.log(projectImageDisplayHTML)
-    console.log("PENIS PENIS PENIS")
     return projectImageDisplayHTML
 }
 
@@ -255,6 +256,7 @@ function constructProject(project){
     cardClassesString = "";
     categoryBadgesString = "";
     toolsBadgesString = "";
+    dropdownString = "";
 
     for(cardClass of project.cardClasses){
         cardClassesString += cardClass + " ";
@@ -270,19 +272,43 @@ function constructProject(project){
         `
     }
 
-    if(project.hasImage){
-        console.log(project.imageURL);
+
+    if(project.hasGithub || project.hasDemo){ //if it has either github or demo 
+        dropdownString += `
+        <div class="dropdown">
+            <div tabindex="0" role="button" class="flex flex-col items-start justify-center">
+                <h2 class="font-bold card-title-text text-xl hover:underline cursor-pointer">${project.projectName}</h2>
+            </div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+        
+        `
+        if(project.hasGithub && !project.hasDemo){ //if it has github and no demo 
+            dropdownString += `<li><a href="${project.github}" target="_blank" rel="noopener noreferrer">Github</a></li>`
+        }
+        
+        else if(project.hasDemo && !project.hasGithub){ //if it just has the demo 
+            dropdownString += `<li><a href="${project.demoLink}" target="_blank" rel="noopener noreferrer">Demo</a></li>`
+        }   
+        else if(project.hasDemo && project.hasGithub){ //if it has both 
+            dropdownString += `
+                <li><a href="${project.github}" target="_blank" rel="noopener noreferrer">Github</a></li>
+                <li><a href="${project.demoLink}" target="_blank" rel="noopener noreferrer">Demo</a></li>
+            `
+        }
+
+        dropdownString += `</ul></div>`
     }
     else{
-        console.log(project.hasImage);
+        dropdownString += `<h2 class="font-bold card-title-text text-xl hover:underline cursor-pointer no-links">${project.projectName}</h2>`
     }
+
 
     projectHTML = 
         `<div class="card-body ${cardClassesString} py-0 mb-[5vw] flex-none project-item hidden">
-            <h2 id="${project.projectID}" class="card-title">
-                ${project.projectName}
+            <div id="${project.projectID}" class="card-title">
+                ${dropdownString}
                 ${categoryBadgesString}
-            </h2>
+            </div>
             <h3 class="text-sm text-gray-400 font-semibold">${project.yearPrefix}</h3>
             ${constructProjectImageDisplay(project)}
             <p class="flex-none">
@@ -293,14 +319,35 @@ function constructProject(project){
             </div>
         </div>`
 
+    document.querySelector('#toasts').innerHTML += `
+        <div id="${project.projectID}-toast" class="toast alert w-fit bg-[#fcba03] opacity-[95%]">
+            <span>Sorry!<strong> ${project.projectName}</strong> has no available demo or GitHub!</span>
+        </div>
+    `
+
     return projectHTML;
 }
 
 
+function showToast(toast) {    
+    if(toast.classList.contains('spam-flag') && !toast.classList.contains('angry')){
+        toast.classList.add('angry')
+    }
+
+    toast.classList.add('is-visible')
+
+    toast.classList.add("spam-flag");
+    
+    setTimeout(() => {
+        toast.classList.remove("spam-flag");
+        toast.classList.remove("angry");
+        toast.classList.remove('is-visible')
+    }, 2500);
+}
 
 async function fetchJSON(filename){
     try {
-        const response = await fetch(`../data/${filename}.json`);
+        const response = await fetch(`../data/json/${filename}.json`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -312,6 +359,48 @@ async function fetchJSON(filename){
         console.error('There was a problem with the fetch operation:', error);
         return null; 
     }
+}
+
+function linkCarouselItems() {
+    document.querySelectorAll('.carousel-item-link').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevents the default vertical scroll
+            
+            // Get the ID from the href, e.g., "#item1"
+            const targetId = link.getAttribute('href');
+            
+            // Get the element to scroll to
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    inline: 'nearest',
+                    block: 'nearest'
+                });
+            }
+        });
+    });
+}
+
+function linkModals(){
+    document.querySelectorAll(".card-title-text").forEach((title)=>{
+        if(!title.classList.contains('no-links')){
+            title.addEventListener('click', ()=>{
+                document.querySelector(`modal-${id}`).showModal();
+            });
+        }
+    });
+}
+
+function linkAlerts(){
+    document.querySelectorAll('.no-links').forEach((title)=>{
+        title.addEventListener('click', function(){
+            let toast = document.querySelector(`#${title.parentElement.id}-toast`)
+            showToast(toast);
+        });
+        console.log(`${title} linked.`)
+    });
 }
 
 var popTargets = document.querySelectorAll(".pop-target");
@@ -395,6 +484,9 @@ async function loadPage() {
             runAnimation(slideInFromRightTargets, "slide-in-from-right", 200);
             runAnimation(slideInFromTopTargets, "slide-in-from-top", 100);
             applyPrefixOnClicks();
+            linkCarouselItems();
+            linkModals();
+            linkAlerts();
         }, 0);
 
     } 

@@ -1,111 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cupcake">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob Arquiza Portfolio</title>
+    <title>Jacob Arquiza Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="flex flex-col items-center">
-    <section id="navbar" class="flex w-full h-[3vw] bg-[#4b2e83] sticky top-0 z-50"></section>
-    <section id="name" class="w-full h-[35vh] flex flex-col items-center">
-        <h1 class="text-7xl ml-[-30vw] mt-8">Hi, I'm</h1>
-        <h1 class="text-8xl font-bold text-[#4b2e83]">Jacob Arquiza</h1>
+<body class="flex flex-col items-center overflow-x-hidden">
+    <!-- <input type="checkbox" value="dark" class="toggle theme-controller" /> -->
+    <div id="graphic-container" class="opacity-[0.5]">
+        <div id="graphic-1" class="absolute h-[25vh] w-full top-0 bg-[url(../data/images/project-graphic-ripple.png)] bg-cover"></div>
+        <div id="graphic-2" class="absolute h-[25vh] w-full top-0 bg-[url(../data/images/project-graphic-ripple.png)] bg-cover"></div>
+    </div>
+   
+    <section class="h-[25vh] w-[60%] flex flex-col justify-end items-end">
+        <h1 class="text-7xl font-bold mr-8 slide-in-from-top-target hidden">PROJECTS</h1>
+        <div class="h-0.5 w-full bg-gray-400 slide-in-from-top-target hidden"></div>
     </section>
-    <div id="line-1" class="h-0.5 w-[70vw] bg-gray-400"></div>
-    <section id="id" class="flex flex-row w-[90vw] p-5 mt-5 justify-start">
-        <div id="profile-picture" class="w-[22vw] h-[22vw] bg-[#4b2e83] rounded-full m-5 flex">
-            <div id="profile-picture-image" class="w-[20vw] h-[20vw] rounded-full overflow-hidden m-5 bg-[url(../static/ghibli%20nature%20.jpeg)]"></div>
+    <section id="main-window" class="w-[60%] h-[60vh] grid grid-cols-[30%_auto_70%]">
+        <div id="project-index" class="space-y-3 py-3">
+            <h1 class="text-5xl font-bold mb-8 slide-in-from-top-target hidden">Contents</h1>
+            <section id="by-technology"></section>
+            <section id="by-year"></section>
         </div>
-        <div id="id" class="flex-1 p-5 flex">
-            <div class="grid grid-rows-[auto_auto_auto_auto_1fr] gap-y-3 ">
-                <span id="id-name" class="flex mt-5">
-                    <h2 class="text-4xl"><strong>NAME:</strong> Jacob Arquiza</h2>
-                    </h2>
-                </span>
-                <span id="id-title" class="flex">
-                    <h2 class="text-4xl"><strong>TITLE:</strong> Computer Science Student & Developer</h2>
-                    </h2>
-                </span>
-                <span id="id-key-skills" class="flex flex-wrap">
-                    <h2 class="text-4xl"><strong>KEY SKILLS:</strong> JFull Stack, CV and ML/AI, System  Design, JavaScript, Python, C++, Java, Node</h2>
-                    </h2>
-                </span>
-                <span id="id-education" class="flex">
-                    <h2 class="text-4xl"><strong>EDUCATION:</strong> Undergraduate CSSE + Applied Math</h2>
-                    </h2>
-                </span>
-
-                <span id="id-mission" class="flex">
-                    <h2 class="text-4xl"><strong>MISSION:</strong> To learn and grow from each experience; to create meaningful technologies to help real people.</h2>
-                    </h2>
-                </span> 
-            </div>
-        </div>
+        <div class="w-0.5 h-auto bg-gray-400 slide-in-from-top-target hidden"></div>
+        <div id="project-display" class="mt-3 flex flex-col"></div>
+        </div> 
     </section>
-    <div id="line-2" class="h-0.5 w-[70vw] bg-gray-400"></div>
-    <section id="history" class="flex flex-col items-center w-full">
-        <h1 class="text-6xl font-bold m-5">MY HISTORY</h1>
-        <div class="w-full relative">
-            <div id="timeline-line" class="absolute top-0 left-1/2 transform -translate-x-1/2 w-0.5 h-[50vw] bg-gray-400"></div>
-            <div class="space-y-5">
-                <div id="timeline-uw" class="w-full flex flex-row mt-5">
-                    <div class="transform translate-x-1/2 w-[30vw] h-auto bg-gray-400 rounded-2xl p-5 space-y-3">
-                        <h3 class="text-3xl font-bold">Computer Science and Software Engineering (BSc),</br>Applied Mathematics (BSc)</h3>
-                        <h4 class="text-xl font-semibold">University of Washington</h4>
-                        <ol class="list-disc pl-8">
-                            <li>GPA: 3.91</li>
-                        </ol>
-                    </div>
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-[5vw] h-[5vw] rounded-full bg-blue-400"></div>
-                    <h2 class="absolute left-1/2 transform translate-x-1/2 mt-[2.5vw]">/2025 - Present</h2>
-                </div>
-                <div id="timeline-microsoft-discovery" class="w-full flex flex-row">
-                    <div class="ml-auto transform -translate-x-1/2 -1/2 w-[30vw] h-auto bg-gray-400 rounded-2xl p-5 space-y-3">
-                        <h3 class="text-3xl font-bold">Discovery SRE Intern</h3>
-                        <h4 class="text-xl font-semibold">Microsoft, Redmond, WA</h4>
-                        <ol class="list-disc pl-8">
-                            <li>Developed/designed currently-in-production systems</li>
-                        </ol>
-                    </div>
-                    <h2 class="absolute right-1/2 transform -translate-x-1/2 transform -translate-y-1/2 mt-[1.5vw]">/Jul 2025</h2>
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-[3vw] h-[3vw] rounded-full bg-blue-400"></div>
-                </div>
-                <div id="timeline-bellevue-college" class="w-full flex flex-row">
-                    <div class="transform translate-x-1/2 w-[30vw] h-auto bg-gray-400 rounded-2xl p-5 space-y-3">
-                        <h3 class="text-3xl font-bold">Arts & Science (AAS)</br>Concentration in Computer Science</h3>
-                        <h4 class="text-xl font-semibold">Bellevue College, Bellevue, WA</h4>
-                        <ol class="list-disc pl-8">
-                            <li>GPA: 3.91</li>
-                            <li>Attended during high school through Running Program</li>
-                            <li>Bellevue College Coding Competition 4th Place (2024)</li>
-                        </ol>
-                    </div>
-                    <h2 class="absolute right-1/2 transform -translate-x-1/2 transform -translate-y-1/2 mt-[1.5vw]">/2023 - 2025</h2>
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-[5vw] h-[5vw] rounded-full bg-blue-400"></div>
-                </div>
-                <div id="timeline-high-school" class="w-full flex flex-row">
-                    <div class="ml-auto transform -translate-x-1/2 -1/2 w-[30vw] h-auto bg-gray-400 rounded-2xl p-5 space-y-3">
-                        <h3 class="text-3xl font-bold">High School</h3>
-                        <h4 class="text-xl font-semibold">Cleveland STEM High School, Seattle, WA</h4>
-                        <ol class="list-disc pl-8">
-                            <li>GPA: 4.64</li>
-                            <li>School of Computer Science (SOCS) Program</li>
-                        </ol>
-                    </div>
-                    <h2 class="absolute right-1/2 transform -translate-x-1/2 transform -translate-y-1/2 mt-[1.5vw]">/2021-2025</h2>
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-[5vw] h-[5vw] rounded-full bg-blue-400"></div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+    <div id="toasts" class="flex justify-center w-full h-auto"></div>
+    <script src="../scripts/projects.js"></script>
 </body>
 </html>
-
-<!-- Notes:
- 
-Redesign to make the text smaller
-redesign the timeline, it's not smartly made
-
--->

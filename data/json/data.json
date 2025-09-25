@@ -1,0 +1,344 @@
+{
+    "technologyCategories": {
+        "WebApp Development": {
+            "title": "WebApp Development", 
+            "prefix": "webapp", 
+            "directoryString": "webdev/", 
+            "projectClass": "webapp-project"
+        },
+        "Robotics & Computer Vision": {
+            "title": "Robotics & Computer Vision", 
+            "prefix": "robocv", 
+            "directoryString": "robo_cv/", 
+            "projectClass": "robocv-project"
+        },
+        "Machine Learning & AI": {
+            "title": "Machine Learning & AI", 
+            "prefix": "mlai", 
+            "directoryString": "ml_ai/", 
+            "projectClass": "mlai-project"
+        },
+        "Game Development": {
+            "title": "Game Development", 
+            "prefix": "gamedev", 
+            "directoryString": "gamedev/", 
+            "projectClass": "gamedev-project"
+        },
+        "UI/UX Development": {
+            "title": "UI/UX Development", 
+            "prefix": "uiux", 
+            "directoryString": "ui_ux/", 
+            "projectClass": "uiux-project"
+        }
+    },
+    "yearCategories": {
+        "Year 2025": {
+            "title": "2025", 
+            "prefix": "y2025", 
+            "directoryString": "2025/.../", 
+            "projectClass": "y2025-project"
+        },
+        "Year 2024": {
+            "title": "2024", 
+            "prefix": "y2024", 
+            "directoryString": "2024/.../", 
+            "projectClass": "y2024-project"
+        }
+    },
+    "projects": [
+        {
+            "projectName": "EnnyText",
+            "projectID": "ennytext",
+            "cardClasses": [
+                "webapp-project",
+                "mlai-project",
+                "y2025-project"
+            ],
+            "categoryBadges": [
+                {
+                    "label": "ML/AI",
+                    "color": "#A970F3",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                },
+                {
+                    "label": "WebApp Dev",
+                    "color": "#70BEC2",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                }
+            ],
+            "yearPrefix": "2025/present/",
+            "description": "Originally built to help me learn Mandarin to communicate with my girlfriend's parents, EnnyText has grown into a project that will help both high school students learn world language and help US immigrants learn English in a more intuitive and linguistically centered way. Using everything I've learned from CFA (and more through self-directed learning), my web app uses Gemini Flash 2.0 to break down Mandarin text into learner-friendly translations, with future plans for integration into Cleveland High School's Chinese curriculum and the King County Library System's ESL programs. This project is currently in progress, with many core features already shipped.",
+            "toolsBadges": [
+                "Node",
+                "NLP",
+                "Gemini Flash API",
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "hasImage":false,
+            "hasGithub": false,
+            "hasDemo": false
+        },
+        {
+            "projectName": "XBOT Robotics Season Portfolio",
+            "projectID": "xbot-robotics-season-portfolio",
+            "cardClasses": [
+                "webapp-project",
+                "y2025-project"
+            ],
+            "categoryBadges": [
+                {
+                    "label": "WebApp Dev",
+                    "color": "#70BEC2",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                }
+            ],
+            "yearPrefix": "2025/apr/",
+            "description": "In this project, I displayed my robotics team's work through a mobile-first website, compiling our most notable projects. I composed over 50 pages of technical documents and diagrams about our team's projects, focusing on the projects developed by the computer vision sub-team I lead. I broke down our advanced computer vision, advanced physics and mathematics, and machine learning projects at the business and technical level, presented this information to judges along with the website, and won the team the Innovation and Control Award through my presentations.",
+            "toolsBadges": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "hasImage":true,
+            "imageURLS":[
+                 "../data/images/xbot-robotics-season-portfolio.png"
+                ],
+            "hasGithub": true,
+            "github": "https://github.com/jacobArquiza/XBOT-project-showcase",
+        "hasDemo": true,
+            "demoLink": "https://jacobarquiza.github.io/XBOT-project-showcase/"
+        },
+        {
+            "projectName": "Auto Image Labeler and Classifier WebApp UI",
+            "projectID": "auto-image-labeler-and-classifier-webapp-ui",
+            "cardClasses": [
+                "webapp-project",
+                "robocv-project",
+                "mlai-project",
+                "y2025-project"
+            ],
+            "categoryBadges": [
+                {
+                    "label": "Robotics & CV",
+                    "color": "#2DBA65",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                },
+                {
+                    "label": "ML/AI",
+                    "color": "#A970F3",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                },
+                {
+                    "label": "WebApp Dev",
+                    "color": "#70BEC2",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                }
+            ],
+            "yearPrefix": "2025/jan/",
+            "description": "I managed and oversaw the development of our image classification improvement system, ownning the human-model interface design portion. This system continuously refined our image detection and classification model, which was trained on FRC 2025 robots and game pieces, streamlining the manual image labeling process for the team. I owned the human-model interface portion of the design. Our model, trained on over 170,000 images, had each one vetted for quality by the Auto Image Labeler.",
+            "toolsBadges": [
+                "Python",
+                "RoboFlow",
+                "YOLOv8",
+                "Figma"
+            ],
+            "hasImage": true,
+            "imageURLS":[
+                 "../data/images/auto-labeler.jpeg"
+                ],
+            "hasGithub": false,
+            "hasDemo": false
+        },
+        {
+            "projectName": "Mandarin Stroke Order Generator",
+            "projectID": "mandarin-stroke-order-generator",
+            "cardClasses": [
+                "webapp-project",
+                "y2024-project"
+            ],
+            "categoryBadges": [
+                {
+                    "label": "WebApp Dev",
+                    "color": "#70BEC2",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                }
+            ],
+            "yearPrefix": "2024/dec/",
+            "description": "This website helped students quickly search for Mandarin Chinese characters and stroke orders through typing them. Writing in Mandarin Chinese is notoriously difficult to master because of the vast amount of unique characters; when studying for exams, my classmates and I often had to search through textbooks, packets, and Google Searches to find out or remember how to write them. This project allowed us to streamline our studying, needing only to type the character into the site and see a visual brushstroke breakdown. This project was endorsed by my teacher and used by many Chinese students across all course levels at the institution.",
+            "toolsBadges": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "hasImage":true,
+            "imageURLS":[
+                 "../data/images/mandarin-stroke-rder-generator.png"
+                ],
+            "hasGithub": true,
+            "github": "https://github.com/jacobArquiza/ZHCharacterToStroke",
+            "hasDemo": true,
+            "demoLink": "https://jacobarquiza.github.io/ZHCharacterToStroke/"
+        },
+        {
+            "projectName": "Seattle Homelessness Project",
+            "projectID": "seattle-homelessness-project",
+            "cardClasses": [
+                "webapp-project",
+                "y2024-project"
+            ],
+            "categoryBadges": [
+                {
+                    "label": "WebApp Dev",
+                    "color": "#70BEC2",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                }
+            ],
+            "yearPrefix": "2024/dec/",
+            "description": "I developed this site to provide critical information about food, shelter, education, and more to the unhoused, organizing the information based on the feasability of accessing each resource. I focused on factors such as location, site offerings, and operating hours - factors that make or break options for those with limited access to travel.",
+            "toolsBadges": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Figma"
+            ],
+            "hasImage":true,
+            "imageURLS":[
+                "../data/images/seattle-homelessness-project.png"
+            ],
+            "hasGithub": false,
+            "hasDemo": false
+        },
+        {
+            "projectName": "Interlink Data Transportation System",
+            "projectID": "interlink-data-transportation-system",
+            "cardClasses": [
+                "robocv-project",
+                "y2024-project"
+            ],
+            "categoryBadges": [
+                {
+                    "label": "Robotics & CV",
+                    "color": "#2DBA65",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                }
+            ],
+            "yearPrefix": "2024/mar/",
+            "description": "I developed the Interlink System to support video duplication from multiple cameras and their transportation to different machines on board an FRC competition robot using C and GStreamer. This system allowed our robot to process the same video feed differently on machines optimized to process them; this included object detection on some machines and mapping/match logging on others.",
+            "toolsBadges": [
+                "C",
+                "Python",
+                "GStreamer"
+            ],
+            "hasImage":false,
+            "hasGithub": false,
+            "hasDemo": false
+        },
+        {
+            "projectName": "Silver's Cafe",
+            "projectID": "silvers-cafe",
+            "cardClasses": [
+                "y2024-project",
+                "gamedev-project"
+            ],
+            "categoryBadges": [
+                {
+                    "label": "Game Development",
+                    "color": "#FF9F32",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                }
+            ],
+            "yearPrefix": "2024/jun/",
+            "description": "A personal favorite of mine, this project was a labor of love. I developed this game as an anniversary gift to my girlfriend, whose dream is to own a Brazilian cafe. I replicated the cafe floorplan we created together, along with custom sprites and assets, with pixel art in MediBang. I used Unity as the game engine and C# to handle its logic, and hosted the demo online (after giving her the original USB of course!).",
+            "toolsBadges": [
+                "C#",
+                "Unity",
+                "MediBang Paint"
+            ],
+                        "hasImage":true,
+            "imageURLS":[
+                "../data/images/silvers-cafe-01.png",
+                "../data/images/silvers-cafe-02.png",
+                "../data/images/silvers-cafe-03.png"
+            ],
+            "hasGithub": false,
+            "hasDemo": true,
+            "demoLink": "https://jacobadev.itch.io/silvers-cafe"
+        },
+        {
+            "projectName": "Re:Cycle",
+            "projectID": "recycle",
+            "cardClasses": [
+                "y2024-project",
+                "uiux-project"
+            ],
+            "categoryBadges": [
+                {
+                    "label": "UI/UX",
+                    "color": "#FFDD32",
+                    "badgeClasses": [
+                        "badge-secondary",
+                        "pop-target",
+                        "hidden"
+                    ]
+                }
+            ],
+            "yearPrefix": "2024/oct/",
+            "description": "This project was a submission for the University of Washington WINFO design hackathon. My team and I designed and presented an app made with the purpose of helping the community through promoting healthy recycling habits. Alongside our app design and presentation, we also conducted an intercollegiate study and composed technical documentation. I owned the app design and technical documentation portions. This project won us the best presentation award and an honorable mention placement.",
+            "toolsBadges": [
+                "Figma",
+                "G Suite"
+            ],
+            "hasImage":true,
+            "imageURLS":[
+                "../data/images/recycle-presentation.png",
+                "../data/images/recycle-figma.jpeg",
+                "../data/images/recycle-study.jpeg"
+            ],
+            "hasGithub": false,
+            "hasDemo": true,
+            "demoLink": "https://docs.google.com/presentation/d/1wGejUl7OK5_0M0MZiPXpv3XnwDMoiQ4uTYBekOaPqho/edit?usp=sharing"
+        }
+    ]
+}

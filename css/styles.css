@@ -114,28 +114,71 @@
     transform: scale(1.05);
 }
 
-.typewriter {
-            overflow: hidden; /* Hides text that overflows its width */
-            border-right: .15em solid rgb(0, 0, 0); /* The blinking cursor */
-            white-space: nowrap; /* Prevents text from wrapping */
-            font-size: 2em;
-            width: 0; /* Starts with zero width */
-            animation: 
-                typing 3.5s steps(30, end) forwards, /* The typing animation */
-                blink-caret .75s step-end infinite; /* The blinking cursor animation */
-        }
 
-        /* The typing animation reveals the text by increasing the width */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 51}
-        }
+@keyframes toast-slide-in-and-out {
+    0%{ 
+        transform: translateY(100%) translateX(-50%); 
+        opacity: 0;
+    }
+    10%{ /*.25 seconds*/
+        transform: translateY(-20%) translateX(-50%); 
+        opacity: .95;
+    } 
+    90%{ /*2.25 seconds seconds*/
+        transform: translateY(-20%) translateX(-50%); 
+        opacity: .95;
+    }
+    100%{ 
+        transform: translateY(100%) translateX(-50%);
+        opacity:0;
+    }
+}
 
-        /* The blinking cursor animation */
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: black; }
-        }
+@keyframes toast-spam-wobble{
+    0%{
+        transform: translateY(-20%) translateX(-50%)
+        rotate(0deg);
+    }
+    25%{
+        transform: translateY(-20%) translateX(-50%)
+        rotate(1deg);
+    }
+    50%{
+        transform: translateY(-20%) translateX(-50%)
+        rotate(-1deg);
+    }
+    75%{
+        transform: translateY(-20%) translateX(-50%)
+        rotate(1deg);
+    }
+    100%{
+        transform: translateY(-20%) translateX(-50%)
+        rotate(0deg);
+    }
+}
+
+.toast{
+    left: 50%;
+    transform: 
+        translateX(-50%)
+        translateY(100%);
+}
+
+.toast.is-visible {
+    animation: toast-slide-in-and-out 2.5s ease-in-out forwards;
+}
+
+
+.toast.angry{
+    animation: toast-spam-wobble 0.25s infinite;
+    transform-origin: center center;
+}
+
+.toast.is-visible.angry {
+    animation:
+        toast-slide-in-and-out 2.5s ease-in-out forwards,
+        toast-spam-wobble 0.25s infinite;
+}
 
 .hidden, 
 .hidden.slide-in-from-left-target h2, 
@@ -158,3 +201,27 @@ html{
   z-index: 10;
 }
 
+@keyframes slide-accross-screen-1{
+    from{
+        transform: translateX(-50%)
+    }
+    to{
+        transform: translateX(50%)
+    }
+}
+@keyframes slide-accross-screen-2{
+    from{
+        transform: translateX(-150%)
+    }
+    to{
+        transform: translateX(-50%)
+    }
+}
+
+#graphic-1{
+    animation: slide-accross-screen-1 40s linear infinite;
+}
+
+#graphic-2{
+    animation: slide-accross-screen-2 40s linear infinite;
+}
